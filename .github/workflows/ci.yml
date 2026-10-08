@@ -2,14 +2,19 @@ name: CI
 
 on:
   push:
+    branches:
+      - main
   pull_request:
+
+permissions:
+  contents: read
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Get the sources
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up OCaml
@@ -17,12 +22,14 @@ jobs:
         with:
           ocaml-compiler: "5.2.1"
 
-      - name: Install Dune
-        run: opam install dune --yes
+      - name: Install dependencies
+        run: opam install dune ocamlformat --yes
+
+      - name: Check formatting
+        run: opam exec -- make check-format
 
       - name: Build
         run: opam exec -- dune build
 
       - name: Run tests
         run: opam exec -- dune runtest
-
