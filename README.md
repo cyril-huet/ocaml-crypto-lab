@@ -109,7 +109,7 @@ dune exec ./bin/crypto_lab.exe -- elgamal 7
 With the Makefile, arguments can be passed through `ARGS`:
 
 ```sh
-make run ARGS='rsa "Hello"'
+make run ARGS='rsa demo "Hello"'
 ```
 
 The generated private key and encrypted files are ignored by Git. Do not put a
