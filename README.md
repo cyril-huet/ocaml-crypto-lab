@@ -59,7 +59,7 @@ tool needed is Dune.
 
 ## Requirements
 
-- OCaml 4.14 or newer;
+- OCaml 5.2.1;
 - Dune 2.9 or newer;
 - `ocamlformat` is optional and is only needed for formatting commands.
 
