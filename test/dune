@@ -1,0 +1,8 @@
+(test
+ (name test)
+ (libraries crypto_lib))
+
+(test
+ (name test_files)
+ (libraries crypto_lib))
+

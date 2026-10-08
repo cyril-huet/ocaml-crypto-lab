@@ -1,0 +1,4 @@
+(executable
+ (name crypto_lab)
+ (libraries crypto_lib))
+
